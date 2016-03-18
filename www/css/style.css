@@ -17,6 +17,10 @@ h1 {
     font-family: Futura !important;
 }
 
+h1,h2,h3,h4,h5,h6,body{
+  font-family: montserratblack;
+}
+
 
 /* Utilities
 ==================================*/
@@ -183,11 +187,13 @@ p {
   font-size: 7vh;
   margin: 0;
   widows: 100%;
+  color: #000;
 }
 
 .campaign .item h2 p {
   white-space: normal;
   font-size: 3vh;
+  line-height: 4vh;
 }
 
 
@@ -203,15 +209,16 @@ p {
 .cp-overlay{
   color: white;
   letter-spacing: -1px;
-  background: rgb(0, 0, 0); /* fallback color */
-  background: rgba(0, 0, 0, 0.7);
+  /*background: rgb(0, 0, 0); /* fallback color
+  background: rgba(0, 0, 0, 0.7);*/
+  background: #fff;
   padding: 10px;
 }
 
-.button.button-energized {
-    border-color: #fff!important;
+.button-energized{
+    border-color: #676666!important;
     background-color: transparent;
-    color: #fff!important;
+    color: #676666!important;
     font-size: 3vh;
 }
 
@@ -239,4 +246,11 @@ background-size:cover!important;
 background-position:center;
 position: relative;
 width: 100%;
+}
+
+.item-note {
+    float: none;
+    color: #0B94BB;
+    font-size: 14px;
+    display: block;
 }
