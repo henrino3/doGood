@@ -150,10 +150,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   })
 
 
-  .state('app.tab.campaigns.campaign', {
+  .state('app.campaign', {
       url: '/campaign',
       views: {
-          'menuContent@app.tab.campaigns': {
+          'menuContent@app': {
               templateUrl: 'templates/campaign-detail.html',
               controller: 'CampaignDetailCtrl'
           }

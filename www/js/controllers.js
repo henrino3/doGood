@@ -124,7 +124,7 @@ angular.module('starter.controllers', [])
   $scope.openCampaign = function(){
     console.log(this.campaign);
     Campaign.set(this.campaign)
-    $state.go('app.tab.campaigns.campaign')
+    $state.go('app.campaign')
   }
 })
 

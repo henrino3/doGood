@@ -1,9 +1,20 @@
+@font-face {
+    font-family: Futura;
+    src: url(futura.ttf);
+}
+/*Try it yourself »*/
+
 /* General
 ==================================*/
+body {
+  font-family: Futura !important;
+}
+
 h1 {
     color: #fff;
     text-shadow: 0 1px 0px #000;
     font-size: 42px;
+    font-family: Futura !important;
 }
 
 
@@ -17,6 +28,7 @@ h1 {
 p {
     color: #555;
     margin: 0 0 25px;
+    font-family: Futura !important;
 }
 
 .scroll {
@@ -167,8 +179,8 @@ p {
 
 .campaign .item h2 {
   white-space: normal;
-  font-family: sans-serif;
-  font-size: 5vh;
+  font-family: Futura;
+  font-size: 7vh;
   margin: 0;
   widows: 100%;
 }
