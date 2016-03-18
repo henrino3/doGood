@@ -119,8 +119,23 @@ p {
     right: 5px;
   }
 
+
+
 .pfr-campaign{
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.profile .tabs-striped .tabs {
+    box-shadow: 0 0 0 0 rgba(0,0,0,.26);
+}
+
+.ngo-box{
+  height:150px;
+}
+.ngo-box-text{
+  margin: 5px!important;
+  color: #fff;
+  text-decoration-style: solid;
 }

@@ -102,8 +102,22 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('NgoCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
+.controller('NgoCtrl', function($scope, $timeout, $stateParams, ionicMaterialMotion, ionicMaterialInk) {
+  // Set Motion
+  $timeout(function() {
+      ionicMaterialMotion.slideUp({
+          selector: '.slide-up'
+      });
+  }, 300);
 
+  $timeout(function() {
+      ionicMaterialMotion.fadeSlideInRight({
+          startVelocity: 3000
+      });
+  }, 700);
+
+  // Set Ink
+  ionicMaterialInk.displayEffect();
 })
 
 .controller('GeocampaignCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
@@ -156,7 +170,7 @@ angular.module('starter.controllers', [])
 
 
 .controller('ActivityCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
-  
+
 
     $timeout(function() {
         ionicMaterialMotion.fadeSlideIn({
