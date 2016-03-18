@@ -105,3 +105,22 @@ p {
 .profile .row .card {
     margin: 1px;
   }
+
+  .prf-icon{
+    margin-top: 60px;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    color: #7C7474;
+  }
+
+  .profile .right {
+    right: 5px;
+  }
+
+.pfr-campaign{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
