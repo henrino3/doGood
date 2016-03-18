@@ -170,7 +170,7 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('GeocampaignCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $ionicLoading) {
+.controller('GeocampaignCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $ionicLoading, $window, $compile) {
     function initialize() {
       var myLatlng = new google.maps.LatLng(43.07493,-89.381388);
 
@@ -196,13 +196,14 @@ angular.module('starter.controllers', [])
         title: 'Uluru (Ayers Rock)'
       });
 
-      google.maps.event.addListener(marker, 'click', function() {
+        $window.google.maps.event.addListener(marker, 'click', function() {
         infowindow.open(map,marker);
       });
 
       $scope.map = map;
     }
-    google.maps.event.addDomListener(window, 'load', initialize);
+
+    $window.google.maps.event.addDomListener(window, 'load', initialize);
 
     $scope.centerOnMe = function() {
       if(!$scope.map) {
@@ -214,7 +215,7 @@ angular.module('starter.controllers', [])
         showBackdrop: false
       });
 
-      navigator.geolocation.getCurrentPosition(function(pos) {
+        $window.navigator.geolocation.getCurrentPosition(function(pos) {
         $scope.map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
         $scope.loading.hide();
       }, function(error) {
