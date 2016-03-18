@@ -101,3 +101,7 @@ p {
     margin-bottom: 4px;
     color: #7D7C7C;
 }
+
+.profile .row .card {
+    margin: 1px;
+  }
