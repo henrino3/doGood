@@ -2,14 +2,13 @@
 
 	<ion-content class="campaign" style="margin-top:44px;">
 
-			<div class="list card" style="margin:0px;">
-			  <div class="item item-image cp-img-cover" style="background:url('img/profile-bg.jpg');">
+			<div class="list card" style="margin:0px;" ng-repeat="campaign in campaigns">
+			  <div class="item item-image cp-img-cover" style="background:url({{campaign.story_cover.value}});">
 					<a class="cp-title item assertive " href="#">
 						<h2 class="cp-overlay">
-							Agatha gets married after her cancer remisssion
+							{{campaign.story_title}}
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minn reprehe
+								{{campaign.story_content | limitTo: 200 }}
 							</p>
 							  <ul class="cp-btn-container">
 							  	<li class="cp-btn"><button class="button button-small button-clear" ui-sref="app.campaign">Read More</button></li>
@@ -19,54 +18,5 @@
 					</a>
 			  </div>
 	  	</div>
-
-
-
-
-
-			<div class="list card" style="margin:0px">
-			  <div class="item item-image" style="position: relative;width: 100%;">
-			    <img src="img/profile-bg.jpg">
-					<a class="cp-title item assertive " href="#">
-						<h2 class="cp-overlay">
-							Agatha gets married after her cancer remisssion
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minn reprehe
-							</p>
-							  <ul class="cp-btn-container">
-							  	<li class="cp-btn"><button class="button button-small button-clear">Read More</button></li>
-							  	<li class="cp-btn"><button class="button  button-outline button-small button-energized">Donate</button></li>
-							  </ul>
-				   		</h2>
-					</a>
-			  </div>
-	  	</div>
-
-			<div class="list card" style="margin:0px">
-			  <div class="item item-image" style="position: relative;width: 100%;">
-			    <img src="img/profile-bg.jpg">
-					<a class="cp-title item assertive " href="#">
-						<h2 class="cp-overlay">
-							Agatha gets married after her cancer remisssion
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minn reprehe
-							</p>
-							  <ul class="cp-btn-container">
-							  	<li class="cp-btn"><button class="button button-small button-clear">Read More</button></li>
-							  	<li class="cp-btn"><button class="button  button-outline button-small button-energized">Donate</button></li>
-							  </ul>
-				   		</h2>
-					</a>
-			  </div>
-	  	</div>
-
-
-
-
-
-
-
-	</ion-content>
+  </ion-content>
 </ion-view>
