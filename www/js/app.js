@@ -77,7 +77,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   })
 
 
-  .state('app.tab.campaign', {
+  .state('app.tab.campaigns', {
       url: '/campaigns',
       views: {
           'campaign': {
@@ -150,10 +150,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   })
 
 
-  .state('app.campaign', {
+  .state('app.tab.campaigns.campaign', {
       url: '/campaign',
       views: {
-          'menuContent': {
+          'menuContent@app.tab.campaigns': {
               templateUrl: 'templates/campaign-detail.html',
               controller: 'CampaignDetailCtrl'
           }

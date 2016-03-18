@@ -1,5 +1,17 @@
 angular.module('starter.services', [])
 
+.factory('Campaign', function(){
+  var campaign = null
+  return {
+    set: function(campaign){
+      this.campaign = campaign
+    },
+    get: function(){
+      return this.campaign
+    }
+  }
+})
+
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 

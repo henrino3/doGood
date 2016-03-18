@@ -98,7 +98,7 @@ angular.module('starter.controllers', [])
     ionicMaterialInk.displayEffect();
 })
 
-.controller('CampaignCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, syncanoService) {
+.controller('CampaignCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, syncanoService, Campaign, $state) {
   var syncano = null; // will be used for API calls
   $scope.campaigns = null;
   $scope.error = null;
@@ -120,11 +120,18 @@ angular.module('starter.controllers', [])
         $scope.error = err;
       });
   }
+
+  $scope.openCampaign = function(){
+    console.log(this.campaign);
+    Campaign.set(this.campaign)
+    $state.go('app.tab.campaigns.campaign')
+  }
 })
 
 
-.controller('CampaignDetailCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
-
+.controller('CampaignDetailCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, Campaign) {
+  $scope.campaign = Campaign.get()
+  console.log($scope.campaign);
 })
 
 
