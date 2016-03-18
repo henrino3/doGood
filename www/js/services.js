@@ -1,50 +1,42 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
+.factory('Campaigns', function(syncanoService) {
   // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
-  var chats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'img/ben.png'
-  }, {
-    id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
-  }, {
-    id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
-  }, {
-    id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
-  }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
-  }];
+  var syncano = null; // will be used for API calls
+  var campaigns = null;
+  var error = null;
 
-  return {
-    all: function() {
-      return chats;
-    },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
-        }
-      }
-      return null;
-    }
+    return {
+      // all: function (){ // can only be used with apiKey/userKey or accountKey
+      //   syncanoService.getSyncano() // gets the current Syncano object
+      //     .then(function(res){ // uses promises in case a userKey is needed
+      //       syncano = res; // set to current Syncano Object
+      //       return getCampaigns(); // Gets all campaigns /*TODO - Get permissions*/
+      //     })
+      //     .catch(function(err){
+      //       console.log(err);
+      //     });
+      //     function getCampaigns(){
+      //       syncano.class('campaign').dataobject().list() // Change CLASS to your class
+      //       .then(function(res){
+      //         console.log('campaigns', campaigns);
+      //         return res.objects;
+      //       })
+      //       .catch(function(err){
+      //         error = err;
+      //       });
+      //     }
+      // },
+      // get: function(campaignId){
+      //   for (var i = 0; i < chats.length; i++) {
+      //     if (chats[i].id === parseInt(chatId)) {
+      //       return chats[i];
+      //     }
+      //   }
+      //   return null;
+      // }
+    };
+
   };
 });
