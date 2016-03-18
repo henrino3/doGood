@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>ngSyncano Example</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+<script src="./dist/ng-syncano.js"></script>
+
+<script> // REMEMBER: Replace Syncano User details = apiKey, instance, and class (user details optional)
+var myApp = angular.module('myApp', ['ngSyncano']);
+
+myApp.config(function (syncanoConfigProvider) { // NOTE: please be aware that only first configuration would be applied
+	syncanoConfigProvider.configure({ // enter Syncano details
+		apiKey: 'MY_PUBLIC_API_KEY',
+		instance: 'MY_INSTANCE'
+		// username: 'USERNAME', // you can enter your username and password in the config to get the userKey
+		// password: 'PASSWORD'
+	});
+
+	// You can also use your account key, BUT then your API calls in the controllers
+	// will need to include the .instance('MY_INSTANCE') call AFTER syncano
+
+	// syncanoConfigProvider.configure({
+	//	accountKey: 'MY_ACCOUNT_KEY'
+	// });
+});
+
+myApp.controller('SyncanoController', function ($scope, syncanoService) {
+
+	var syncano = null; // will be used for API calls
+
+	$scope.dataRetrievedFromSyncano = null;
+	$scope.error = null;
+
+	syncanoService.getSyncano() // gets the current Syncano object (see config above)
+		.then(function(res){ // uses promises in case a userKey is needed
+			syncano = res; // set to current Syncano Object
+
+                getList(); // ONLY WORKS if you have permissions set correctly
+
+                /* TO REMOVE A USER */
+                //syncanoService.removeSyncanoUser(); // returns string if need be
+
+                /* TO LOG IN */
+                //var user = {
+                 //"username": "USERNAME",
+                 //"password": "PASSWORD"
+                //};
+                //syncanoService.setSyncanoUser(user)
+                    //.then(function(res){
+                        //syncano = res;
+                        //getList();
+                    //})
+                    //.catch(function(err){
+                        //console.log(err);
+                    //});
+            })
+            .catch(function(err){
+                console.log(err);
+            });
+
+	function getList(){ // can only be used with apiKey/userKey or accountKey
+		syncano.class('CLASS').dataobject().list() // Change CLASS to your class
+			.then(function(res){
+				$scope.dataRetrievedFromSyncano = res.objects;
+			})
+			.catch(function(err){
+				$scope.error = err;
+			});
+	}
+});
+</script>
+</head>
+
+<body ng-app="myApp">
+	<div ng-controller="SyncanoController">
+		<div ng-if="error !== null" class="error">{{error.message}}</div>
+		<div ng-if="dataRetrievedFromSyncano !== null" class="data">{{dataRetrievedFromSyncano | json}}</div>
+	</div>
+</body>
+</html>
