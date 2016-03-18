@@ -122,8 +122,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
   })
 
 
-
-
+  .state('app.settings', {
+      url: '/settings',
+      views: {
+          'menuContent': {
+              templateUrl: 'templates/settings.html',
+              controller: 'SettingsCtrl'
+          }
+      }
+  })
 
 
 

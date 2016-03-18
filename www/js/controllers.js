@@ -129,6 +129,7 @@ angular.module('starter.controllers', [])
 
 })
 
+
 .controller('ProfileCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
 
     // Set Motion
@@ -146,6 +147,14 @@ angular.module('starter.controllers', [])
 
     // Set Ink
     ionicMaterialInk.displayEffect();
+})
+
+
+.controller('SettingsCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $ionicHistory) {
+  $scope.myGoBack = function() {
+    $ionicHistory.goBack();
+  };
+
 })
 
 .controller('FriendsCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
