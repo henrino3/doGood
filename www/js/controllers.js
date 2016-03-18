@@ -157,6 +157,13 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('InviteCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $ionicHistory) {
+  $scope.myGoBack = function() {
+    $ionicHistory.goBack();
+  };
+
+})
+
 .controller('FriendsCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
     // Set Header
     $scope.$parent.showHeader();

@@ -133,6 +133,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
   })
 
 
+  .state('app.invite', {
+      url: '/invite',
+      views: {
+          'menuContent': {
+              templateUrl: 'templates/invite.html',
+              controller: 'InviteCtrl'
+          }
+      }
+  })
+
+
 
 
   .state('app.activity', {
