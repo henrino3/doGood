@@ -15,30 +15,12 @@
           </a>
       </div>
 
-        <div class="row ">
-          <div class="card card-gallery item item-text-wrap col col-offset-10 col-50 ngo-box" style="background-image:linear-gradient(red, #f06d06);">
-              <div class="ink">
-                  <h2 class="ngo-box-text">Saint Mary's Orphanage</h2>
+        <div ng-repeat="NGO in NGOs">
+          <div class="card card-gallery item item-text-wrap col col-offset-10 col-50 ngo-box" style="background:url({{NGO.logo.value}}) no-repeat; background-size:contain;">
+              <div class="ink" style="background-color: rgba(0,0,0,0.3)">
+                  <h2 class="ngo-box-text">{{NGO.title}}</h2>
               </div>
           </div>
-          <div class="card card-gallery item item-text-wrap col col-50 ngo-box" style="background-image:linear-gradient(red, #f06d06);">
-              <div class="ink">
-                  <h2 class="ngo-box-text">Charity Memorial</h2>
-              </div>
-          </div>
-          <div class="card card-gallery item item-text-wrap col col-50 ngo-box" style="background-image:linear-gradient(red, #f06d06);">
-              <div class="ink">
-                  <h2 class="ngo-box-text">Spread Love</h2>
-              </div>
-          </div>
-          <div class="card card-gallery item item-text-wrap col col-50 ngo-box" style="background-image:linear-gradient(red, #f06d06);">
-              <div class="ink">
-                  <h2 class="ngo-box-text">Hearts Reachout</h2>
-              </div>
-          </div>
-
-
-
         </div>
 
 
