@@ -6,8 +6,8 @@
             </div>
 
             <div class="content">
-                <div class="avatar" style="background-image: url('img/daenerys.jpg');"></div>
-                <h3><a>Eric Githinji</a></h3>
+                <div class="avatar" style="background-image: url({{user.profile.avatar.value}});"></div>
+                <h3 style="color: black!important">{{user.profile.first_name + " " + user.profile.last_name}}</h3>
             </div>
 
             <a class="prf-icon right" ui-sref="app.settings">

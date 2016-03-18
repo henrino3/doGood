@@ -10,20 +10,11 @@
 
 
     <ion-content>
-        <div class="item card-item">
-            <div ui-sref="app.tab.campaign" class="card stable-bg ink ink-dark">
-                <div class="item  item-text-wrap">
-                    <strong>Orphans</strong>
-                </div>
-          </div>
+      <div class="" ng-repeat="campaign in campaigns">
+        <img ng-src="{{campaign.story_cover.value}}" style="width: 100%;"alt="" />
+        <h1>{{campaign.story_title}}</h1>
+        <p>{{campaign.story_content}}</p>
       </div>
-        <div class="item card-item">
-            <div ui-sref="app.tab.campaign" class="card stable-bg ink ink-dark">
-                <div class="item  item-text-wrap">
-                    <strong>Bombings</strong>
-                </div>
-          </div>
-      </div>
-
+      <button type="button" name="donate">Donate</button>
     </ion-content>
 </ion-view>

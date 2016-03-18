@@ -138,13 +138,16 @@ angular.module('starter.controllers', [])
   }, 700);
   // Set Ink
   ionicMaterialInk.displayEffect();
-  var syncano = null; // will be used for API calls
+
   $scope.NGOs = null;
+  var syncano = null; // will be used for API calls
+  $scope.user = null;
   $scope.error = null;
   syncanoService.getSyncano() // gets the current Syncano object
     .then(function(res){ // uses promises in case a userKey is needed
       syncano = res; // set to current Syncano Object
-      getNGOs(); // Gets all campaigns /*TODO - Get permissions*/
+      $scope.user = res.userDetails
+      getNGOs()
     })
     .catch(function(err){
       console.log(err);
@@ -163,7 +166,6 @@ angular.module('starter.controllers', [])
 
 .controller('GeocampaignCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
 
-
 })
 
 .controller('NotificationCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
@@ -171,7 +173,7 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('ProfileCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+.controller('ProfileCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk, syncanoService) {
 
     // Set Motion
     $timeout(function() {
@@ -188,6 +190,42 @@ angular.module('starter.controllers', [])
 
     // Set Ink
     ionicMaterialInk.displayEffect();
+
+    var syncano = null; // will be used for API calls
+    $scope.user = null;
+    $scope.error = null;
+    syncanoService.getSyncano() // gets the current Syncano object
+      .then(function(res){ // uses promises in case a userKey is needed
+        syncano = res; // set to current Syncano Object
+        $scope.user = res.userDetails
+        getCampaigns()
+        getDonations()
+        console.log('user', $scope.user);
+      })
+      .catch(function(err){
+        console.log(err);
+      });
+    function getCampaigns(){ // can only be used with apiKey/userKey or accountKey
+      syncano.class('campaign').dataobject().list() // Change CLASS to your class
+        .then(function(res){
+          $scope.campaigns = res.objects;
+          console.log('campaigns',$scope.campaigns);
+        })
+        .catch(function(err){
+          $scope.error = err;
+        });
+    }
+    function getDonations(){
+      syncano.class('donation').dataobject().list() // Change CLASS to your class
+        .then(function(res){
+          $scope.donations = res.objects;
+          console.log('donations',$scope.donations);
+        })
+        .catch(function(err){
+          $scope.error = err;
+        });
+    }
+
 })
 
 
