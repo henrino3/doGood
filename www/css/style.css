@@ -89,13 +89,14 @@ p {
     top: 0px;
 }
 
-.profile .tabs h4{
+.ngo .tabs h4,.profile .tabs h4{
     font-size: 16px;
     margin-top: 3px;
     margin-bottom: 4px;
+    color: #026E7B;
 }
 
-.profile .tabs h5{
+.ngo .tabs h5,.profile .tabs h5{
     font-size: 13px;
     margin-top: 3px;
     margin-bottom: 4px;
@@ -113,10 +114,12 @@ p {
     height: 50px;
     font-size: 25px;
     color: #7C7474;
+    z-index: 50;
   }
 
   .profile .right {
     right: 5px;
+    z-index: 1;
   }
 
 
