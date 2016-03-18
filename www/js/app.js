@@ -58,16 +58,68 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
       }
   })
 
-  .state('app.campaign', {
-      url: '/campaign',
+  .state('app.tab', {
+      url: '/tab',
+      abstract: true,
+      templateUrl: 'templates/tabs.html',
       views: {
           'menuContent': {
+              templateUrl: 'templates/tabs.html',
+              controller: 'CampaignCtrl'
+          }
+        }
+  })
+
+
+  .state('app.tab.campaign', {
+      url: '/campaign',
+      views: {
+          'campaign': {
               templateUrl: 'templates/campaign.html',
               controller: 'CampaignCtrl'
           }
       }
   })
 
+  .state('app.tab.ngo', {
+      url: '/ngo',
+      views: {
+          'ngo': {
+              templateUrl: 'templates/ngo.html',
+              controller: 'NgoCtrl'
+          }
+      }
+  })
+
+  .state('app.tab.geoCampaign', {
+      url: '/geoCampaign',
+      views: {
+          'geoCampaign': {
+              templateUrl: 'templates/geoCampaign.html',
+              controller: 'GeocampaignCtrl'
+          }
+      }
+  })
+
+  .state('app.tab.notification', {
+      url: '/notification',
+      views: {
+          'notification': {
+              templateUrl: 'templates/notification.html',
+              controller: 'NotificationCtrl'
+          }
+      }
+  })
+
+  .state('app.tab.profile', {
+      url: '/profile',
+      views: {
+          'profile': {
+              templateUrl: 'templates/profile.html',
+              controller: 'ProfileCtrl'
+          }
+      }
+  })
 
 
 
@@ -129,23 +181,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
     })
 
 
-    .state('app.profile', {
-        url: '/profile',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/profile.html',
-                controller: 'ProfileCtrl'
-            },
-            'fabContent': {
-                template: '<button id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
-                controller: function ($timeout) {
-                    /*$timeout(function () {
-                        document.getElementById('fab-profile').classList.toggle('on');
-                    }, 800);*/
-                }
-            }
-        }
-    })
+
     ;
 
     // if none of the above states are matched, use this as the fallback
