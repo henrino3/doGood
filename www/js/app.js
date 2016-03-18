@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'ionMdInput', 'ngSyncano'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -20,8 +20,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
     });
 })
 
-.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, syncanoConfigProvider) {
 
+    syncanoConfigProvider.configure({
+      apiKey: '0ccb75598fcf0ac6dca41b40d342b8fc4023442f',
+      instance: 'patient-darkness-8396',
+      username: 'heartfoundation',
+      password: 'heart1234'
+    })
     // Turn off caching for demo simplicity's sake
     $ionicConfigProvider.views.maxCache(0);
 
@@ -178,11 +184,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
                 }
             }
         }
-    })
-
-
-
-    ;
+    });
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/login');
