@@ -98,9 +98,9 @@ angular.module('starter.controllers', [])
     ionicMaterialInk.displayEffect();
 })
 
-.controller('CampaignCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, syncanoService, Campaign, $state) {
+.controller('CampaignCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, syncanoService, Campaign, $state, LocalStorage) {
   var syncano = null; // will be used for API calls
-  $scope.campaigns = null;
+  if(LocalStorage.get('campaigns')) $scope.campaigns = LocalStorage.get('campaigns');
   $scope.error = null;
   syncanoService.getSyncano() // gets the current Syncano object
     .then(function(res){ // uses promises in case a userKey is needed
@@ -114,6 +114,7 @@ angular.module('starter.controllers', [])
     syncano.class('campaign').dataobject().list() // Change CLASS to your class
       .then(function(res){
         $scope.campaigns = res.objects;
+        LocalStorage.set('campaigns', JSON.stringify(res.objects))
         console.log('campaigns',$scope.campaigns);
       })
       .catch(function(err){
@@ -129,9 +130,35 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('CampaignDetailCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, Campaign) {
+.controller('CampaignDetailCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, Campaign, $http) {
   $scope.campaign = Campaign.get()
+  $scope.donationAmount = 0
+  $scope.amount = null
+
+  var vodafoneApi = "http://testpay.vodafonecash.com.gh"
+  var method = "POST"
+  var data = {
+    username: 511500,
+    password: "hackathon2",
+    token: "abc1234",
+    amount: $scope.donationAmount
+  }
   console.log($scope.campaign);
+  $scope.donate = function(){
+    $scope.amount = $scope.donationAmount
+    document.getElementById('donatemodal').style="display:block"
+    if($scope.donationAmount > 0){
+      console.log('amount > 0, posting to vodafoneApi');
+      $http.post(vodafoneApi, data).then(function(res){
+        console.log(res);
+      }, function(err){
+        console.log(err);
+      });
+    }
+  }
+  $scope.donation = function(amount){
+    $scope.donationAmount = amount
+  }
 })
 
 

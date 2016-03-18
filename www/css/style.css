@@ -211,7 +211,7 @@ p {
 }
 
 .button-energized{
-    border: 0.5px solid #676666 !important;
+    border: 0px !important;
     background-color: transparent;
     color: #676666!important;
     font-size: 3vh;

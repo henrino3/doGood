@@ -3,22 +3,60 @@
     <ion-nav-back-button class="button-clear" ng-click="myGoBack()">
     <i class="ion-arrow-left-c"></i>
   </ion-nav-back-button>
-
 </ion-nav-bar>
-
 
   <ion-content >
       <img ng-src="{{campaign.story_cover.value}}" style="width: 100%;"alt="" />
-      <h3 style="color:#000">{{campaign.story_title}}</h3>
-      <p style="padding:3px">{{campaign.story_content}}</p>
-      <div class="item item-body">
-        <img class="full-image" src="delorean.jpg">
-        <p>
-          This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-          the content is from a card-body consisting of an image and paragraph text. The footer
-          consists of tabs, icons aligned left, within the card-footer.
-        </p>
+      <h3 style="color:black; text-align:center">{{campaign.story_title}}</h3>
+      <p style="padding: 20px;
+                line-height: 1.5;
+                font-size: 1.1em;
+                text-align: justify;
+            ">{{campaign.story_content}}</p>
+
+
+      <div class="item item-body" id="donatemodal" style="display:none">
+        <img class="full-image" ng-src="{{campaign.story_cover.value}}" style="margin-bottom:10px">
+        <input type="button" value="2&#8373" ng-click="donation(2)" style="width: 50px;
+                                                                height: 50px;
+                                                                background-color: transparent;
+                                                                border: 1px dashed lightblue;
+                                                                border-radius: 50%;
+                                                                color: lightblue;
+                                                                font-size: 1.5em;">
+        <input type="button" value="10&#8373" ng-click="donation(10)"  style="width: 50px;
+                                                                height: 50px;
+                                                                background-color: transparent;
+                                                                border: 1px dashed lightblue;
+                                                                border-radius: 50%;
+                                                                color: lightblue;
+                                                                font-size: 1.5em;">
+        <input type="button" value="20&#8373" ng-click="donation(20)"  style="width: 50px;
+                                                                height: 50px;
+                                                                background-color: transparent;
+                                                                border: 1px dashed lightblue;
+                                                                border-radius: 50%;
+                                                                color: lightblue;
+                                                                font-size: 1.5em;">
+      <input type="button" value="50&#8373" ng-click="donation(50)"  style="width: 50px;
+                                                              height: 50px;
+                                                              background-color: transparent;
+                                                              border: 1px dashed lightblue;
+                                                              border-radius: 50%;
+                                                              color: lightblue;
+                                                              font-size: 1.5em;">
+        <input type="number" ng-model="donationAmount" style="width: 70px;
+                                                                height: 70px;
+                                                                background-color: transparent;
+                                                                border-bottom: 1px dashed lightblue;
+                                                                color: lightblue;
+                                                                font-size: 3em;
+                                                                text-align: center;
+                                                                display: inline-block;
+                                                                float: right">
+
    </div>
-   <button class="button button-block button-energized" style="color:#fff;font-family:montserratregular!important">Donate</button>
+   <button class="button button-block button-energized" style="vertical-align:middle;color:#ffffff!important;font-family:montserratregular!important" ng-click="donate()">Donate <span style="font-size: 1.5em" ng-show="donationAmount>0">{{donationAmount | currency: '&#8373': 0}}</span></button>
   </ion-content>
+
 </ion-view>
