@@ -15,13 +15,16 @@
           </a>
       </div>
 
-        <div ng-repeat="NGO in NGOs">
-          <div class="card card-gallery item item-text-wrap col col-offset-10 col-50 ngo-box" style="background:url({{NGO.logo.value}}) no-repeat; background-size:contain;">
+      <ul class="ngo-box" ng-repeat="NGO in NGOs">
+        <li class="ngo-box-item">
+          <div class="card card-gallery item item-text-wrap" style="height:150px;background:url({{NGO.logo.value}}) no-repeat; background-size:contain;">
               <div class="ink" style="background-color: rgba(0,0,0,0.3)">
                   <h2 class="ngo-box-text">{{NGO.title}}</h2>
               </div>
           </div>
-        </div>
+        </li>
+      </ul>
+
 
 
     </ion-content>
