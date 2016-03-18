@@ -84,3 +84,20 @@ p {
 .topm {
   margin-top: 44px;
 }
+
+.has-tabs-top {
+    top: 0px;
+}
+
+.profile .tabs h4{
+    font-size: 16px;
+    margin-top: 3px;
+    margin-bottom: 4px;
+}
+
+.profile .tabs h5{
+    font-size: 13px;
+    margin-top: 3px;
+    margin-bottom: 4px;
+    color: #7D7C7C;
+}

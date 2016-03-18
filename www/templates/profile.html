@@ -1,43 +1,48 @@
-<ion-view view-title="Profile">
+<ion-view view-title="Profile" class="profile">
     <ion-content>
-        <div class="hero slide-up" style="background-image: url('img/profile-bg.jpg');">
+        <div class="hero slide-up">
             <div class="content">
                 <div class="avatar" style="background-image: url('img/daenerys.jpg');"></div>
-                <h3><a class="light">Daenerys Targaryen</a></h3>
-                <h4>dragon_mommy</h4>
+                <h3><a>Eric Githinji</a></h3>
             </div>
         </div>
-        <div class="tabs tabs-dark tabs-icon-top static">
-            <a ui-sref="app.activity" class="tab-item">
-                <i class="icon ion-arrow-graph-up-right"></i> Activity
+        <div class="tabs tabs-light tabs-icon-top static" style="background:#fff">
+            <a class="tab-item">
+                <h4>$300</h4>
+                <h5>Donated</h5>
             </a>
-            <a ui-sref="app.friends" class="tab-item">
-                <i class="icon ion-android-people"></i> Friends
+            <a class="tab-item">
+              <h4>20</h4>
+              <h5>Campaigns</h5>
             </a>
-            <a ui-sref="app.gallery" class="tab-item">
-                <i class="icon ion-images"></i> Photos
-            </a>
-        </div>
-        <h4 class="content padding double-padding-x">Following</h4>
-        <div class="list animate-fade-slide-in-right">
-            <a ui-sref="app.friends" class="item item-avatar item-icon-right">
-                <img src="img/jon-snow.jpg">
-                <h2>Jon Snow</h2>
-                <p>Da illest illegitimate</p>
-                <i class="icon ion-chatbubble muted"></i>
-            </a>
-            <a ui-sref="app.friends" class="item item-avatar item-icon-right">
-                <img src="img/sansa.jpg">
-                <h2>Sansa Stark</h2>
-                <p>&amp; Joffrey <strike>sitting</strike> sat in a tree</p>
-                <i class="icon ion-chatbubble muted"></i>
-            </a>
-            <a ui-sref="app.friends" class="item item-avatar item-icon-right">
-                <img src="img/tyrion.jpg">
-                <h2>Tyrion Lannister</h2>
-                <p>B.A.M.F. imp</p>
-                <i class="icon ion-chatbubble muted"></i>
+            <a class="tab-item">
+              <h4>3</h4>
+              <h5>NGO's</h5>
             </a>
         </div>
+
+        <div class="row">
+          <div class="card card-gallery item item-text-wrap col col-offset-10 col-25" style="background-image:url('img/sansa-snowcastle3.jpg');height: 150px;">
+              <div class="ink dark-bg">
+                  <h2>Where's Elsa 1</h2>
+              </div>
+          </div>
+
+          <div class="card card-gallery item item-text-wrap col col-25" style="background-image:url('img/sansa-snowcastle3.jpg');height: 150px;">
+              <div class="ink dark-bg">
+                  <h2>Where's Elsa 1</h2>
+              </div>
+          </div>
+
+          <div class="card card-gallery item item-text-wrap col col-25" style="background-image:url('img/sansa-snowcastle3.jpg');height: 150px;">
+              <div class="ink dark-bg">
+                  <h2>Where's Elsa 1</h2>
+              </div>
+          </div>
+
+
+        </div>
+
+
     </ion-content>
 </ion-view>
