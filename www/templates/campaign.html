@@ -1,6 +1,6 @@
 <ion-view title="Title">
 
-	<ion-content class="campaign" style="margin-top:44px;">
+	<ion-content class="campaign" style="margin-top:6vh">
 
 			<div class="list card" style="margin:0px;" ng-repeat="campaign in campaigns">
 			  <div class="item item-image cp-img-cover" style="background:url({{campaign.story_cover.value}});">
@@ -11,7 +11,7 @@
 								{{campaign.story_content | limitTo: 200 }}
 							</p>
 							  <ul class="cp-btn-container">
-							  	<li class="cp-btn"><button class="button button-small button-clear" ui-sref="app.campaign">Read More</button></li>
+							  	<li class="cp-btn"><button class="button button-small button-clear" ui-sref="app.campaign" style="color:#45C9ED;font-size: 18px;">Read More</button></li>
 							  	<li class="cp-btn"><button class="button  button-outline button-small button-energized">Donate</button></li>
 							  </ul>
 				   		</h2>
