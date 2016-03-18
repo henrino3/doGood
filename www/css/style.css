@@ -217,3 +217,11 @@ p {
 .campaign .item {
   padding: 0px;
 }
+
+.cp-img-cover{
+height:100vh;
+background-size:cover!important;
+background-position:center;
+position: relative;
+width: 100%;
+}

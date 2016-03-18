@@ -78,7 +78,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
 
 
   .state('app.tab.campaign', {
-      url: '/campaign',
+      url: '/campaigns',
       views: {
           'campaign': {
               templateUrl: 'templates/campaign.html',
@@ -145,6 +145,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-material', 'io
           'menuContent': {
               templateUrl: 'templates/invite.html',
               controller: 'InviteCtrl'
+          }
+      }
+  })
+
+
+  .state('app.campaign', {
+      url: '/campaign',
+      views: {
+          'menuContent': {
+              templateUrl: 'templates/campaign-detail.html',
+              controller: 'CampaignDetailCtrl'
           }
       }
   })

@@ -123,6 +123,12 @@ angular.module('starter.controllers', [])
 })
 
 
+.controller('CampaignDetailCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
+
+})
+
+
+
 .controller('NgoCtrl', function($scope, $timeout, $stateParams, ionicMaterialMotion, ionicMaterialInk, syncanoService) {
   // Set Motion
   $timeout(function() {
