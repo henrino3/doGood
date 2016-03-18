@@ -146,6 +146,74 @@ p {
    display:inline-block;
    float:left;
    height: 150px;
-   width: 45%;
+   width: 48%;
    margin: 1%;
+}
+
+.prf-box{
+  display:block;
+  text-decoration:none;
+}
+
+.prf-box-item{
+   display:inline-block;
+   float:left;
+   height: 150px;
+   width: 48%;
+}
+
+.campaign .item h2 {
+  white-space: normal;
+  font-family: sans-serif;
+  font-size: 5vh;
+  margin: 0;
+  widows: 100%;
+}
+
+.campaign .item h2 p {
+  white-space: normal;
+  font-size: 3vh;
+}
+
+
+
+.cp-title{
+  position:absolute;
+  top: 55%;
+  left: 0;
+  width: 100%;
+}
+
+
+.cp-overlay{
+  color: white;
+  letter-spacing: -1px;
+  background: rgb(0, 0, 0); /* fallback color */
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+}
+
+.button.button-energized {
+    border-color: #fff!important;
+    background-color: transparent;
+    color: #fff!important;
+    font-size: 3vh;
+}
+
+.cp-btn-container{
+  display:block;
+  text-decoration:none;
+  margin-top:5%;
+}
+
+.cp-btn{
+   display:inline-block;
+   float:left;
+   height: 150px;
+   width: 48%;
+   margin: 1%;
+}
+
+.campaign .item {
+  padding: 0px;
 }
