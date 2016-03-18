@@ -1,11 +1,24 @@
 <ion-view title="Title">
 
-	<ion-content class="topm">
-    <div class="" ng-repeat="campaign in campaigns">
-      <img ng-src="{{campaign.story_cover.value}}" style="width: 100%;"alt="" />
-      <h1>{{campaign.story_title}}</h1>
-      <p>{{campaign.story_content}}</p>
-    </div>
+	<ion-content class="campaign" style="margin-top:44px;">
+
+			<div class="list card" style="margin:0px" ng-repeat="campaign in campaigns">
+			  <div class="item item-image" style="position: relative;width: 100%;">
+			    <img ng-src="{{campaign.story_cover.value}}">
+					<a class="cp-title item assertive " href="#">
+						<h2 class="cp-overlay">
+							{{campaign.story_title}}
+							<p>
+								{{campaign.story_content}}
+							</p>
+							  <ul class="cp-btn-container">
+							  	<li class="cp-btn"><button class="button button-small button-clear">Read More</button></li>
+							  	<li class="cp-btn"><button class="button  button-outline button-small button-energized">Donate</button></li>
+							  </ul>
+				   		</h2>
+					</a>
+			  </div>
+	  	</div>
   </ion-content>
 
 </ion-view>
