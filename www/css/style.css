@@ -232,6 +232,12 @@ p {
    margin: 1%;
 }
 
+.cp-btn-icon{
+   display:inline-block;
+   float:right;
+   padding-right: 2vh;
+}
+
 .campaign .item {
   padding: 0px;
 }
@@ -250,4 +256,14 @@ width: 100%;
   font-size: 2vh;
   display: block;
   line-height: 3vh;
+}
+
+.cp-icon{
+      box-shadow: 0 0px 0px 0 #fff,0 0px 0px 0 #fff;
+      padding: 0 0rem;
+      border-color: #fff!important;
+}
+
+ion-scroll[direction=y] {
+  height: 100vh;
 }
