@@ -122,6 +122,7 @@ angular.module('starter.controllers', [])
   }
 })
 
+
 .controller('NgoCtrl', function($scope, $timeout, $stateParams, ionicMaterialMotion, ionicMaterialInk, syncanoService) {
   // Set Motion
   $timeout(function() {
@@ -137,7 +138,6 @@ angular.module('starter.controllers', [])
   }, 700);
   // Set Ink
   ionicMaterialInk.displayEffect();
-
   var syncano = null; // will be used for API calls
   $scope.NGOs = null;
   $scope.error = null;
