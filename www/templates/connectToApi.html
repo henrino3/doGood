@@ -6,20 +6,22 @@
     <title></title>
   </head>
   <body>
-    <form id="connectToApi" action="http://testpay.vodafonecash.com.gh" method="post">
+    <form id="connectToApi" name="connectToApi" action="http://testpay.vodafonecash.com.gh" method="post">
       <input type="text" name="username" value="511500">
       <input type="text" name="password" value="hackathon2">
 
       <input type="text" name="token" value="abc1234">
 
-      <input type="text" id="amount" value="">
+      <input type="text" id="amount" name="amount" value="">
 
       <button type="submit" name="button">Donate</button>
     </form>
-    <script type="text/javascript">
-    document.load(function(){
 
-    })
+    <script type="text/javascript">
+    window.onload = function(){
+      document.getElementById('amount').value = location.search.split('amount=')[1]
+        // document.getElementById('donate').click()
+    }
     </script>
   </body>
 </html>

@@ -180,7 +180,7 @@ angular.module('starter.controllers', [])
 
  $scope.closeModal = function() {
    if($scope.donationAmount > 0){
-     var ref = window.open('connectToApi.html', '_blank', 'location=no', 'hidden=yes');
+     var ref = window.open('templates/connectToApi.html?amount=' + $scope.donationAmount, '_blank', 'location=no', 'hidden=yes');
      ref.addEventListener('loadstop', function() {
        ref.executeScript({file: 'apiScript.js'});
      });
