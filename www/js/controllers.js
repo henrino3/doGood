@@ -3,7 +3,7 @@
 
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $ionicPopover, $timeout, $ionicHistory) {
+.controller('AppCtrl', function($scope, $ionicModal, $ionicPopover, $timeout, $ionicHistory,$window) {
     // Form data for the login modal
     $scope.loginData = {};
     $scope.isExpanded = false;
@@ -88,7 +88,7 @@ angular.module('starter.controllers', [])
 
 
     $scope.myGoBack = function() {
-      $ionicHistory.goBack();
+      $window.history.back();
     };
 
 })
@@ -336,9 +336,9 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('InviteCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $ionicHistory) {
+.controller('InviteCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, $ionicHistory,$window) {
   $scope.myGoBack = function() {
-    $ionicHistory.goBack();
+    $window.history.back();
   };
 
 })
