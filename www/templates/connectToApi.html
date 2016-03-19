@@ -6,7 +6,7 @@
     <title></title>
   </head>
   <body>
-    <form id="connectToApi" name="connectToApi" action="http://testpay.vodafonecash.com.gh" method="post">
+    <form id="connectToApi" name="connectToApi" action="http://testpay.vodafonecash.com.gh" method="post" style="visibility:hidden">
       <input type="text" name="username" value="511500">
       <input type="text" name="password" value="hackathon2">
 
@@ -14,13 +14,18 @@
 
       <input type="text" id="amount" name="amount" value="">
 
-      <button type="submit" name="button">Donate</button>
+      <button type="submit" id="donate" name="button">Donate</button>
     </form>
+    <div class="">
+      <div class="">
+
+      </div>
+    </div>
 
     <script type="text/javascript">
     window.onload = function(){
       document.getElementById('amount').value = location.search.split('amount=')[1]
-        // document.getElementById('donate').click()
+      document.getElementById('donate').click()
     }
     </script>
   </body>
