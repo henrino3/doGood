@@ -268,7 +268,7 @@ angular.module('starter.controllers', [])
         title: 'Uluru (Ayers Rock)'
       });
 
-        $window.google.maps.event.addListener(marker, 'click', function() {
+        google.maps.event.addListener(marker, 'click', function() {
         infowindow.open(map,marker);
       });
 
