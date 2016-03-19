@@ -181,8 +181,8 @@ angular.module('starter.controllers', [])
  $scope.closeModal = function() {
    if($scope.donationAmount > 0){
      var ref = window.open('templates/connectToApi.html?amount=' + $scope.donationAmount, '_blank', 'location=no', 'hidden=yes');
-     ref.addEventListener('loadstop', function() {
-       ref.executeScript({file: 'apiScript.js'});
+     ref.addEventListener('exit', function() {
+       addDonation($scope.donationAmount, $scope.user, $scope.ngo)
      });
    }
    $scope.modal.hide();
