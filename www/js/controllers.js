@@ -152,15 +152,7 @@ angular.module('starter.controllers', [])
       if($scope.donationAmount > 0){
         var ref = cordova.InAppBrowser.open('connectToApi.html', '_blank', 'location=no', 'hidden=yes');
         ref.addEventListener('loadstop', function() {
-          ref.executeScript({code:
-            window.onload = function(){
-              document.getElementById('amount').value = $scope.donationAmount
-              document.getElementById('connectToApi').submit()
-              // document.forms['connectToApi'].submit()
-              setTimeout(function () {
-                ref.show()
-              }, 10);
-            }});
+          ref.executeScript({file: 'apiScript.js'});
         });
 
         console.log('amount > 0, posting to vodafoneApi');
