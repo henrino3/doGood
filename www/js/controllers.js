@@ -136,7 +136,8 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('CampaignDetailCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, Campaign, $http,  $ionicModal) {
+.controller('CampaignDetailCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, Campaign, $http,  $ionicModal, $ionicPlatform) {
+
   $scope.campaign = Campaign.get()
   $scope.donationAmount = 0
   $scope.amount = null
@@ -153,15 +154,13 @@ angular.module('starter.controllers', [])
   $scope.donate = function(){
     $scope.amount = $scope.donationAmount
     document.getElementById('donatemodal').style="display:block"
-    document.getElementById('content').style="display:none"
-    if($scope.donationAmount > 0){
-      console.log('amount > 0, posting to vodafoneApi');
-      $http.post(vodafoneApi, data).then(function(res){
-        console.log(res);
-      }, function(err){
-        console.log(err);
-      });
-    }
+
+    // $ionicPlatform.ready({
+
+
+    // })
+
+
   }
   $scope.donation = function(amount){
     $scope.donationAmount = amount
@@ -180,6 +179,12 @@ angular.module('starter.controllers', [])
  }
 
  $scope.closeModal = function() {
+   if($scope.donationAmount > 0){
+     var ref = window.open('connectToApi.html', '_blank', 'location=no', 'hidden=yes');
+     ref.addEventListener('loadstop', function() {
+       ref.executeScript({file: 'apiScript.js'});
+     });
+   }
    $scope.modal.hide();
  };
 
