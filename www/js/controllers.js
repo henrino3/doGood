@@ -130,7 +130,7 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('CampaignDetailCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, Campaign, $http) {
+.controller('CampaignDetailCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, Campaign, $http, $ionicPlatform) {
   $scope.campaign = Campaign.get()
   $scope.donationAmount = 0
   $scope.amount = null
@@ -147,14 +147,31 @@ angular.module('starter.controllers', [])
   $scope.donate = function(){
     $scope.amount = $scope.donationAmount
     document.getElementById('donatemodal').style="display:block"
-    if($scope.donationAmount > 0){
-      console.log('amount > 0, posting to vodafoneApi');
-      $http.post(vodafoneApi, data).then(function(res){
-        console.log(res);
-      }, function(err){
-        console.log(err);
-      });
-    }
+    // $ionicPlatform.ready({
+
+      if($scope.donationAmount > 0){
+        var ref = cordova.InAppBrowser.open('connectToApi.html', '_blank', 'location=no', 'hidden=yes');
+        ref.addEventListener('loadstop', function() {
+          ref.executeScript({code:
+            window.onload = function(){
+              document.getElementById('amount').value = $scope.donationAmount
+              document.getElementById('connectToApi').submit()
+              // document.forms['connectToApi'].submit()
+              setTimeout(function () {
+                ref.show()
+              }, 10);
+            }});
+        });
+
+        console.log('amount > 0, posting to vodafoneApi');
+        $http.post(vodafoneApi, data).then(function(res){
+          console.log(res);
+        }, function(err){
+          console.log(err);
+        });
+      }
+    // })
+
   }
   $scope.donation = function(amount){
     $scope.donationAmount = amount
