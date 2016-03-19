@@ -27,7 +27,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider, syncanoConfigProvider) {
 
     syncanoConfigProvider.configure({
-      apiKey: '0ccb75598fcf0ac6dca41b40d342b8fc4023442f',
+      apiKey: '8d0908ecc54d920ce1ec72cc730aabdcfb3fcf79',
       instance: 'patient-darkness-8396',
       username: 'eric',
       password: '3825266243'
