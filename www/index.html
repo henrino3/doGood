@@ -24,5 +24,55 @@
 </head>
 <body ng-app="starter">
     <ion-nav-view></ion-nav-view>
+
+<script id="donate-modal.html" type="text/ng-template">
+  <div class="modal">
+    <ion-header-bar>
+      <h1 class="title">Edit Contact</h1>
+    </ion-header-bar>
+    <ion-content>
+    <img class="full-image" ng-src="{{campaign.story_cover.value}}" style="margin-bottom:10px">
+    <input type="button" value="2&#8373" ng-click="donation(2)" style="width: 50px;
+                                                            height: 50px;
+                                                            background-color: transparent;
+                                                            border: 1px dashed lightblue;
+                                                            border-radius: 50%;
+                                                            color: lightblue;
+                                                            font-size: 1.5em;">
+    <input type="button" value="10&#8373" ng-click="donation(10)"  style="width: 50px;
+                                                            height: 50px;
+                                                            background-color: transparent;
+                                                            border: 1px dashed lightblue;
+                                                            border-radius: 50%;
+                                                            color: lightblue;
+                                                            font-size: 1.5em;">
+    <input type="button" value="20&#8373" ng-click="donation(20)"  style="width: 50px;
+                                                            height: 50px;
+                                                            background-color: transparent;
+                                                            border: 1px dashed lightblue;
+                                                            border-radius: 50%;
+                                                            color: lightblue;
+                                                            font-size: 1.5em;">
+  <input type="button" value="50&#8373" ng-click="donation(50)"  style="width: 50px;
+                                                          height: 50px;
+                                                          background-color: transparent;
+                                                          border: 1px dashed lightblue;
+                                                          border-radius: 50%;
+                                                          color: lightblue;
+                                                          font-size: 1.5em;">
+    <input type="number" ng-model="donationAmount" style="width: 70px;
+                                                            height: 70px;
+                                                            background-color: transparent;
+                                                            border-bottom: 1px dashed lightblue;
+                                                            color: lightblue;
+                                                            font-size: 3em;
+                                                            text-align: center;
+                                                            display: inline-block;
+                                                            float: right">
+
+      <button class="button button-full button-energized" ng-click="closeModal()">Done</button>
+    </ion-content>
+  </div>
+</script>
 </body>
 </html>

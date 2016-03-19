@@ -136,7 +136,7 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('CampaignDetailCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, Campaign, $http) {
+.controller('CampaignDetailCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk, Campaign, $http,  $ionicModal) {
   $scope.campaign = Campaign.get()
   $scope.donationAmount = 0
   $scope.amount = null
@@ -153,6 +153,7 @@ angular.module('starter.controllers', [])
   $scope.donate = function(){
     $scope.amount = $scope.donationAmount
     document.getElementById('donatemodal').style="display:block"
+    document.getElementById('content').style="display:none"
     if($scope.donationAmount > 0){
       console.log('amount > 0, posting to vodafoneApi');
       $http.post(vodafoneApi, data).then(function(res){
@@ -165,6 +166,32 @@ angular.module('starter.controllers', [])
   $scope.donation = function(amount){
     $scope.donationAmount = amount
   }
+
+
+ $ionicModal.fromTemplateUrl('donate-modal.html', {
+   scope: $scope,
+   animation: 'slide-in-up'
+ }).then(function(modal) {
+   $scope.modal = modal
+ })
+
+ $scope.openModal = function() {
+   $scope.modal.show()
+ }
+
+ $scope.closeModal = function() {
+   $scope.modal.hide();
+ };
+
+ $scope.$on('$destroy', function() {
+   $scope.modal.remove();
+ });
+
+
+
+
+
+
 })
 
 

@@ -17,7 +17,7 @@
   <ion-content >
       <img ng-src="{{campaign.story_cover.value}}" style="width: 100%;"alt="" />
       <h3 style="color:black; text-align:center">{{campaign.story_title}}</h3>
-      <p style="padding: 20px;
+      <p id="content" style="padding: 20px;
                 line-height: 1.5;
                 font-size: 1.1em;
                 text-align: justify;
@@ -65,7 +65,7 @@
                                                                 float: right">
 
    </div>
-   <button class="button button-block button-energized" style="vertical-align:middle;color:#ffffff!important;font-family:montserratregular!important" ng-click="donate()">Donate <span style="font-size: 1.5em" ng-show="donationAmount>0">{{donationAmount | currency: '&#8373': 0}}</span></button>
+   <button class="button button-block button-energized" style="vertical-align:middle;color:#ffffff!important;font-family:montserratregular!important" ng-click="openModal()">Donate <span style="font-size: 1.5em" ng-show="donationAmount>0">{{donationAmount | currency: '&#8373': 0}}</span></button>
   </ion-content>
 
 </ion-view>
