@@ -157,19 +157,7 @@ angular.module('starter.controllers', [])
 
     // $ionicPlatform.ready({
 
-      if($scope.donationAmount > 0){
-        var ref = cordova.InAppBrowser.open('connectToApi.html', '_blank', 'location=no', 'hidden=yes');
-        ref.addEventListener('loadstop', function() {
-          ref.executeScript({file: 'apiScript.js'});
-        });
 
-        console.log('amount > 0, posting to vodafoneApi');
-        $http.post(vodafoneApi, data).then(function(res){
-          console.log(res);
-        }, function(err){
-          console.log(err);
-        });
-      }
     // })
 
 
@@ -191,6 +179,12 @@ angular.module('starter.controllers', [])
  }
 
  $scope.closeModal = function() {
+   if($scope.donationAmount > 0){
+     var ref = window.open('connectToApi.html', '_blank', 'location=no', 'hidden=yes');
+     ref.addEventListener('loadstop', function() {
+       ref.executeScript({file: 'apiScript.js'});
+     });
+   }
    $scope.modal.hide();
  };
 

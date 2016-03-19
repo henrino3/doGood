@@ -17,6 +17,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             // org.apache.cordova.statusbar required
             StatusBar.styleDefault();
         }
+        document.addEventListener("deviceready", onDeviceReady, false)
+        function onDeviceReady(){
+          window.open = cordova.InAppBrowser.open
+        }
     });
 })
 
